@@ -15,10 +15,9 @@ def days_to_units(num_of_days):
  
  
 def validate_and_execute():
-	user_input = input("Hey user, enter a number of days and I will convert it to hours!\n")
 	try:
- 	#if user_input.isdigit():
-		user_input = int(user_input)
+		user_input = int(num_of_days_element)
+		# we want to do conversion only for positi ve ingtegers 
 		if user_input > 0:
 			calculate_days_to_seconds = days_to_units(user_input)
 			print(calculate_days_to_seconds)
@@ -27,11 +26,13 @@ def validate_and_execute():
 		else:
 			print("You entered a negative number. No conversion for you!")
 	except ValueError:
-		if user_input == 'exit' or user_input == 'quit':
-			print("Exiting the program!")
-			sys.exit()
-		else:
-			print("You entered an invalid input. Don't ruin my program!")
+		# if user_input == 'exit' or user_input == 'quit':
+		# 	print("Exiting the program!")
+		# 	sys.exit()
+		# else:
+		print("You entered an invalid input. Don't ruin my program!")
+   
+   
 
 # def scope_check(num_of_days=20):
 # 	print(name_of_units)
@@ -59,11 +60,17 @@ def validate_and_execute():
 
 #user_input = input("Hey user, enter a number of days and I will convert it to hours!\n")
 # print(user_input)
-user_input = input("Hey user, enter a number of days and I will convert it to hours!\n")
+user_input = ''
 while user_input != 'exit' or user_input != 'quit':
-	validate_and_execute()
- 
-# print(days_to_units(int(user_input)))
+	user_input = input("Hey user, enter a number of days as a comma separated list and I will convert it to hours!\n")
+	list_of_days = user_input.split(', ')
+	print(list_of_days)
+	print(set(list_of_days))
+	print(type(list_of_days))
+	print(type(set(list_of_days)))
+	for num_of_days_element in set(list_of_days):
+		validate_and_execute()
+
 
 print(type(True))
 print(type("this should be a string"))
