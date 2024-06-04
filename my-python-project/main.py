@@ -16,9 +16,9 @@ def days_to_units(num_of_days):
  
 def validate_and_execute():
 	try:
-		user_input = int(num_of_days_element)
+		user_input_number = int(num_of_days_element)
 		# we want to do conversion only for positi ve ingtegers 
-		if user_input > 0:
+		if user_input_number > 0:
 			calculate_days_to_seconds = days_to_units(user_input)
 			print(calculate_days_to_seconds)
 		elif user_input == 0:
@@ -63,12 +63,12 @@ def validate_and_execute():
 user_input = ''
 while user_input != 'exit' or user_input != 'quit':
 	user_input = input("Hey user, enter a number of days as a comma separated list and I will convert it to hours!\n")
-	list_of_days = user_input.split(', ')
-	print(list_of_days)
-	print(set(list_of_days))
-	print(type(list_of_days))
-	print(type(set(list_of_days)))
-	for num_of_days_element in set(list_of_days):
+	# list_of_days = user_input.split(',')
+	# print(list_of_days)
+	# print(set(list_of_days))
+	# print(type(list_of_days))
+	# print(type(set(list_of_days)))
+	for num_of_days_element in user_input.split(','):
 		validate_and_execute()
 
 
