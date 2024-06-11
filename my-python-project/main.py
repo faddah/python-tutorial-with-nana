@@ -10,14 +10,14 @@ def days_to_units(num_of_days):
  
  
  
-def validate_and_execute():
+def validate_and_execute(num_of_days_element):
     try:
         user_input_number = int(num_of_days_element)
         # we want to do conversion only for positive ingtegers 
         if user_input_number > 0:
-            calculation = days_to_units(user_input)
+            calculation = days_to_units(user_input_number)
             print(calculation)
-        elif user_input == 0:
+        elif user_input_number == 0:
             print("You entered a 0, please enter a valid positive number!")
         else:
             print("You entered a negative number. No conversion for you!")
@@ -26,13 +26,13 @@ def validate_and_execute():
    
 
 
-user_input = ''
-while user_input != 'exit':
-    user_input = input("Hey user, enter the number of days as a comma separated list and I will convert it to hours!\n\n")
+USER_INPUT = ''
+while USER_INPUT != 'exit':
+    USER_INPUT = input("Hey user, enter the number of days as a comma separated list and I will convert it to hours!\n\n")
     """print(type(user_input.split(", ")))
     print(user_input.split(", "))"""
-    for num_of_days_element in user_input.split(", "):
-        validate_and_execute()
+    for num_day_element in USER_INPUT.split(", "):
+        validate_and_execute(num_day_element)
    
 
 
