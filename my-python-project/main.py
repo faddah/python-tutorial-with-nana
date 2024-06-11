@@ -1,4 +1,4 @@
-# import sys
+import sys
 
 # print('Number of Mintues in 20 Days:', 20 * 60 * 24)
 calculate_days_to_seconds = 60 * 60 * 24
@@ -11,6 +11,9 @@ def days_to_units(num_of_days):
  
  
 def validate_and_execute(num_of_days_element):
+    if num_of_days_element == 'exit' or num_of_days_element == 'quit':
+        print("So long, suckerz!")
+        sys.exit()
     try:
         user_input_number = int(num_of_days_element)
         # we want to do conversion only for positive ingtegers 
@@ -27,11 +30,14 @@ def validate_and_execute(num_of_days_element):
 
 
 USER_INPUT = ''
-while USER_INPUT != 'exit':
+while USER_INPUT != 'exit' or USER_INPUT != 'quit':
     USER_INPUT = input("Hey user, enter the number of days as a comma separated list and I will convert it to hours!\n\n")
-    """print(type(user_input.split(", ")))
-    print(user_input.split(", "))"""
-    for num_day_element in USER_INPUT.split(", "):
+    list_of_days = USER_INPUT.split(",")
+    """print(list_of_days)
+    print(set(list_of_days))
+    print(type(list_of_days))
+    print(type(set(list_of_days)))"""
+    for num_day_element in set(USER_INPUT.split(", ")):
         validate_and_execute(num_day_element)
    
 
