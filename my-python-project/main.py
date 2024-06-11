@@ -15,8 +15,8 @@ def validate_and_execute(num_of_days_element):
         user_input_number = int(num_of_days_element)
         # we want to do conversion only for positive ingtegers 
         if user_input_number > 0:
-            calculation = days_to_units(user_input_number)
-            print(calculation)
+            days_to_units(user_input_number)
+            # print(calculation)
         elif user_input_number == 0:
             print("You entered a 0, please enter a valid positive number!")
         else:
