@@ -1,4 +1,12 @@
 import sys
+        
+print("some text")
+input("enter a value")
+set([1, 3, 4])
+int("20")
+"2, 3".split(", ")
+"text".split()
+[1, 2, 3].count(1)
 
 # Built-in Python Functions
 
@@ -21,11 +29,11 @@ def days_to_units(num_of_days):
 
 
 def validate_and_execute():
-    if num_of_days_element == "exit" or num_of_days_element == "quit":
+    if days_and_unit_dicitionary["days"] == "exit" or days_and_unit_dicitionary["days"] == "quit":
         print("Exiting the program")
         sys.exit()
     try:
-        user_input_number = int(num_of_days_element)
+        user_input_number = int(days_and_unit_dicitionary["days"])
 
         # we want to do conversion only for positive integers
         if user_input_number > 0:
@@ -39,9 +47,26 @@ def validate_and_execute():
         print("your input is not a valid number. Don't ruin my program!")
 
 
-user_input = ""
+""" user_input = ""
 while user_input != "exit" or user_input != "quit":
-    user_input = input("Hey user, enter number of days as a comma separated list and I will convert it to hours!\n")
-    list_of_days = user_input.split(", ")
-    for num_of_days_element in set(list_of_days):
-        validate_and_execute()
+    # user_input = input("Hey user, enter number of days as a comma separated list and I will convert it to hours!\n")
+    user_input = input("Hey user, enter number of days and conversion unit!\n")
+    days_and_unit = user_input.split(":")
+    print(days_and_unit)
+    # for num_of_days_element in set(list_of_days):
+    days_and_unit_dicitionary = {"days": days_and_unit[0], "unit": days_and_unit[1]}
+    print(days_and_unit_dicitionary)
+    validate_and_execute() """
+    
+    
+    
+my_list = ["20", "30", "100"]
+print(my_list[2])
+
+my_dictionary = {"days": "20", "unit": "hours", "message": "all good!"}
+print(my_dictionary["days"])
+print(my_dictionary["unit"])
+print(my_dictionary["message"])
+        
+        
+        
