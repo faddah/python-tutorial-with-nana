@@ -11,3 +11,4 @@ suggestion = numbers[random_number]
 
 # Display the suggestion
 print(suggestion)
+
