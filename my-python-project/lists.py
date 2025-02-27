@@ -1,4 +1,13 @@
+# Write a python docstring to describe the purpose of this script
+"""
+This script demonstrates how to create a list in Python and access its elements.
+"""
+# Write a python docstring to describe the purpose of t\the my_list variable
+# Create a list of months in a year
 my_list = ["January", "February", "March"]
+"""
+This variable is a list of months in a year.
+"""
 print(my_list[0])
 print(my_list[1])
 print(my_list[2])
